@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-table.min.css">
+<title>IP</title>
+</head>
+<body>
+   <table class="table table-striped table-hover"  id="ip_table">
+   <thead class="table-dark text-center">
+      <tr>
+      <th scope="col">IP Address</th>
+      <th scope="col">Availability</th>
+      <th scope="col">Last Update</th>
+      </tr>
+   </thead>
+   <tbody class="text-center">
+   </tbody>
+   </table>
+
+<script src="js/jquery-3.4.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-table.min.js"></script>
+<script>
+function getData()
+{
+   var jsonRequest = $.getJSON ("ip.json",  function (jsonDatas)
+   {
+      $(function() {
+         $.each(jsonDatas, function(i, item) {
+            var valuecolor = 'red';
+            if (item.status == "available") valuecolor = 'green';
+            var $tr = $('<tr>').append(
+               $('<th scope="row">').text(item.ip),
+               $('<td class="text-capitalize" style="color:'+ valuecolor + '">').text(item.status),
+               $('<td>').text(item.date)
+               ).appendTo('#ip_table');
+         });
+      });
+   });
+}
+
+$(document).ready(function () {
+   getData ();
+});
+</script>
+</body>
+</html>
