@@ -1,1 +1,6 @@
+# data sample
 ip.json
+# venv
+*-env/
+# vscode
+.vscode/
