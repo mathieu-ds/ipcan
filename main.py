@@ -99,15 +99,9 @@ class HttpServer:
 
 #############################################################
 
-a = IPScan()
-b = IPScan('192.168.0.2', 170, 199)
-print(f'a : {a.ip} {a.min} {a.max}')
-print(f'b : {b.ip} {b.min} {b.max}')
-
-# ipl = a.Arp()
-# ipfl = a.IPFilter(ipl)
-a.Process()
-
-# url = 'http://127.0.0.1:8888/ip.html'
-# webbrowser.open(url)
-HttpServer(8888, True)
+if __name__ == '__main__':
+   ipscan = IPScan('192.168.1.1', 170, 199)
+   ipscan.Process()
+   # url = 'http://127.0.0.1:8888/ip.html'
+   # webbrowser.open(url)
+   HttpServer(8888, True)
