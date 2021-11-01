@@ -100,8 +100,16 @@ class HttpServer:
 #############################################################
 
 if __name__ == '__main__':
-   ipscan = IPScan('192.168.1.1', 170, 199)
+   # ipscan = IPScan('192.168.1.1', 170, 199)
+   ipscan = IPScan('192.168.1.1', 1, 199)
    ipscan.Process()
-   # url = 'http://127.0.0.1:8888/ip.html'
-   # webbrowser.open(url)
+   url = 'http://127.0.0.1:8888/ip.html'
+   webbrowser.open(url)
    HttpServer(8888, True)
+
+
+   # todo
+   # regex auto
+   # 'thread' rescan toutes les x minutes des ip
+   # + thread server http
+   # ip.html polling json
