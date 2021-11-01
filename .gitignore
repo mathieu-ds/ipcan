@@ -4,3 +4,4 @@ ip.json
 *-env/
 # vscode
 .vscode/
+__pycache__/
