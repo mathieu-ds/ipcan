@@ -18,3 +18,7 @@ pip freeze > requirements.txt
 ```
 python -m pip install -r requirements.txt
 ```
+### start http server
+```
+python -m http.server 1234
+```
